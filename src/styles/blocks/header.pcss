@@ -1,0 +1,44 @@
+.header {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 10rem 0 5rem 0;
+    }
+    &-headline {
+        padding-bottom: 1.5rem;
+    }
+    &-sbt-btn {
+        position: relative;
+        display: inline-block;
+        font-size: 1rem;
+        padding: 4rem 27px 4rem 54px;
+        margin: 0 auto;
+        &:hover {
+            &.header-sbt-btn::after {
+                transition: .6s;
+                width: 100%;
+            }
+        }
+        &::after {
+            position: absolute;
+            display: block;
+            content: '';
+            transition: .6s;
+            left: 0;
+            top: 32%;
+            border-radius: 2rem;
+            height: 54px;
+            width: 54px;
+            background-color: rgba(87, 87, 87, 0.1)
+        }
+        &::before {
+            display: block;
+            position: absolute;
+            left: 1.3rem;
+            font-size: 1.5rem;
+            top: 40.5%;
+            content: '+';
+            color: #F47821;
+        }
+    }
+}
