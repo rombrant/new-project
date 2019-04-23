@@ -1,0 +1,35 @@
+.advantages-container {
+    text-align: center;
+    &-headline {
+        text-transform: uppercase;
+        padding-top: 140px;
+        letter-spacing: .15rem;
+        font-size: 25px;
+    }
+    &__list {
+        padding: 57px 0 146px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    &__item {
+        &:last-child {
+            transform: translateY(-12px);
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-pic {
+            width: 100px;
+            height: 120px;
+            margin-bottom: 1rem;
+        }
+        &-headline {
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+        }
+    }
+}
+.advantages-svg-pic {
+    fill: #FF5253;
+}       

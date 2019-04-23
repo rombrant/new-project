@@ -1,0 +1,38 @@
+.services-container {
+    &-headline {
+        position: relative;
+        padding-top: 140px;
+        text-transform: uppercase;
+        text-align: center;
+        &::before {
+            position: absolute;
+            display: block;
+            bottom: -2.5rem;
+            left: 45%;
+            content: '';
+            width: 6rem;
+            border: 1px solid #FF5253;
+        }
+    }
+    &__list {
+        padding-top: 87px;
+        padding-bottom: 140px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__item {
+        &__wrapper {
+            position: relative;
+            &-text {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                background-color: rgba(0, 0, 0, .4);
+                color: #fff;
+                padding: 1rem 15%;
+            }
+        }
+    }
+}

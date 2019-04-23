@@ -1,0 +1,52 @@
+
+.wellcome-section {
+    background-color: #FAFAFB;
+    height: 90vh;
+}
+.wellcome-container  {
+    background-attachment: fixed;
+    background-image: url('../images/content/layer-main.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 77vh;
+    &__row  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        &__desk {
+            padding: 10rem 15%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            &-headline {
+                color: #fff;
+                font-family: Montserrat;
+                font-size: 48px;
+                font-weight: bold;
+                text-transform: uppercase;
+                
+            }
+            &-text {
+                &::before {
+                    position: absolute;
+                    display: block;
+                    top: 2.5rem;
+                    left: 44.5%;
+                    content: '';
+                    width: 6rem;
+                    border: 1px solid #FF5253;
+                }
+                position: relative;
+                padding-top: 5rem;
+                padding-bottom: 2.5rem;
+                color: #D3D3D3;
+                font-size: 18px;
+            }
+        }
+    }
+        
+}
+    
