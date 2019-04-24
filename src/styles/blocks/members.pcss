@@ -1,0 +1,41 @@
+.crew-container {
+    padding: 140px 0 120px 0;
+    &-headline {
+        &:before {
+            left: 47%;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    &__item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &__desc {
+            &-name {
+                font-family: Montserrat;
+                font-size: 18px;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #686868;
+                padding-top: 29px;
+            }
+            &-pos {
+                font-size: 14px;
+                color: #FF5253;
+                padding-bottom: 29px;
+            }
+            &-text {
+                font-size: 16px;
+                color: rgb(119, 118, 118);
+            }
+        }
+    }
+}

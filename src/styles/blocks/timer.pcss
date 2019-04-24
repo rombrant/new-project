@@ -1,0 +1,63 @@
+.timer {
+    &-section {
+        height: 30vh;
+        background-attachment: fixed;
+        background-image: url('../images/content/layer-car.png');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-container {
+        padding: 140px 0 120px;
+        &-headline {
+            color: #fff;
+            position: relative;
+            &::before {
+                left: 47%;
+            }
+        }
+        &__list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        &__item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-right: 4rem;
+            background-color: rgba(255, 82, 83, 0.85);
+            max-width: 100px;
+            width: 100%;
+            padding: 27.5px 0;
+            border-radius: 50%;
+            &:last-child {
+                margin-right: 0;
+                &::after {
+                    display: none;
+                }
+            }
+            &-number, &-counter {
+                text-align: center;
+                color: #fff;
+            }
+            &::after {
+                display: block;
+                content: ':';
+                position: absolute;
+                top: 33%;
+                right: -2rem;
+                color: #fff;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: normal;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+    

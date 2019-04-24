@@ -1,0 +1,44 @@
+.deadlines-wrapper {
+    max-width: 100vw;
+    background-color:  #F4F5F7;
+}
+
+.deadlines-container {
+    padding: 140px 0 120px 0;
+    &-headline {
+        &::before {
+            left: 47%;
+        }
+    }
+    &__list {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+    &__item {
+        margin: 0 auto;
+        flex: 1;
+        padding: 40px 80px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        border: 3px solid #FF5253;
+        &-date {
+            font-family: Montserrat;
+            font-size: 18px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #8F8F8F;
+        }
+        &-desc {
+            padding-top: 22px;
+            font-size: 16px;
+            color: #8F8F8F;
+        }
+    }
+}

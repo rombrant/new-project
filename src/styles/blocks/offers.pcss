@@ -1,0 +1,79 @@
+.offers-container {
+    padding: 140px 0 120px 0;
+    &-headline {
+        &::before {
+            left: 47%;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__item {
+        cursor: pointer;
+        margin-right: 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        border: 3px solid #F4F5F7;
+        padding-bottom: 55px;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            border: 3px solid #FF5253;
+            transform: scale(1.1);
+        }
+        &-headline {
+            width: 100%;
+            background-color: #FF5253;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 3rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        &-content {
+            padding: 55px 1rem 20px 0;
+            font-size: 16px;
+        }
+        &-content span {
+            margin: 0 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            line-height: 2rem;
+            &::before {
+                position: absolute;
+                display: block;
+                top: 5px;
+                left: -1rem;
+                content: '';
+                width: 1rem;
+                height: 1rem;
+                cursor: pointer;
+                background: svg-load('tick.svg', fill=#FF5253, width=100%, height=100%);
+                background-repeat: no-repeat;
+            }
+    
+        }
+        &-price {
+            font-size: 24px;
+            margin: 0 auto;
+            color: #FF5253;
+            text-align: center;
+            padding-bottom: 30px;
+            font-size: 25px;
+            letter-spacing: 0.15em;
+        }
+    }
+}

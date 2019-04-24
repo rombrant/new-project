@@ -62,6 +62,168 @@ include ./mixins.pug
     },
   ]
 
+- 
+  var steps = [
+    {
+      id: "01",
+      text: "Добавьте краткое описание шага 1, чтобы ваши клиенты могли почувствовать, как легко получить решение"
+    },
+    {
+      id: "02",
+      text: "Добавьте краткое описание шага 1, чтобы ваши клиенты могли почувствовать, как легко получить решение"
+    },
+    {
+      id: "03",
+      text: "Добавьте краткое описание шага 1, чтобы ваши клиенты могли почувствовать, как легко получить решение"
+    },
+  ]
+
+- 
+  var numbers = [
+    {
+      id: "598",
+      head: "ПРОЕКТЫ ВЫПОЛНЕНЫ"
+    },
+    {
+      id: "95",
+      head: "ОБСЛУЖИВАЕМЫЕ КОНТЕРЫ"
+    },
+    {
+      id: "10",
+      head: "ОФИСЫ ПО Москве"
+    },
+  ]
+
+- 
+  var counts =[
+    {
+      number:"00",
+      counter:"дней"
+    },
+    {
+      number:"11",
+      counter:"часов"
+    },
+    {
+      number:"56",
+      counter:"минут"
+    },
+    {
+      number:"21",
+      counter:"секунд"
+    }
+  ]
+
+- 
+  var offers = [
+    {
+      head:"Минимальный",
+      content:"<span>Тщательный осмотр автомобиля</span> <span >Проверка состояния аккумулятора</span> <span >Замена масла и замена щеток</span> <span >Вращающиеся шины</span>",
+      price: "₽2000/мес."
+    },
+    {
+      head:"Средний",
+      content:"<span >Вращающиеся шины</span> <span >Установка премиального масляного фильтра</span> <span >Замена масла </span>",
+      price: "₽4000/мес."
+    },
+    {
+      head:"Максимальный",
+      content:"<span >Тщательный осмотр автомобиля</span> <span >Проверка состояния аккумулятора</span>",
+      price: "₽1000/мес."
+    },
+  ]
+
+- 
+  var members = [
+    {
+      pic:"leonid",
+      name:"Леонид Петров",
+      pos:"Старший автомеханик",
+      desc:"Леонид с детства <br> увлекается автомобилями."
+    },
+    {
+      pic:"michael",
+      name:"Михаил Мишнев",
+      pos:"Автомеханик",
+      desc:"Миша присоединился <br> к команде около 4 лет назад"
+    },
+    {
+      pic:"vasiliy",
+      name:"Василий Стоянов",
+      pos:"Главный управляющий",
+      desc:"Василий много лет занимается <br> ремонтом."
+    },
+    {
+      pic:"fedor",
+      name:"Фёдор Ким",
+      pos:"Автомеханик",
+      desc:"Поможет в большинстве случаев,<br> и вы останетесь довольны"
+    },
+  ]
+
+- 
+  var questions = [
+    {
+      id:"1",
+      text:"Подумайте о наиболее распространенных вопросах о вашем проекте, продукте <br> или событии и ответьте на них. Это поможет вашим посетителям стать нашим клиентам."
+    },
+    {
+      id:"2",
+      text:"Подумайте о наиболее распространенных вопросах о вашем проекте, продукте <br> или событии и ответьте на них. Это поможет вашим посетителям стать нашим клиентам."
+    },
+    {
+      id:"3",
+      text:"Подумайте о наиболее распространенных вопросах о вашем проекте, продукте <br> или событии и ответьте на них. Это поможет вашим посетителям стать нашим клиентам."
+    },
+  ]
+
+- 
+  var careers = [
+    {
+      head:"Старшее место работы",
+      desc:"Мы ищем опытных профессионалов с личной точки зрения <br>и техникой решения проблем."
+    },
+    {
+      head:"СРЕДНЯЯ РАБОТА",
+      desc:"В нашей компании есть несколько «горячих» вакансий. <br> Не упустите свой шанс и отправьте свое резюме."
+    },
+    {
+      head:"ПОЗИЦИЯ Начинающего",
+      desc:"Мы ищем опытных профессионалов с личной точки зрения <br> и техникой решения проблем."
+    }
+  ]
+
+- 
+  var reviews = [
+    {
+      text:"Эти ребята талантливые <br> профессионалы. Я рад, что нашел их. <br> Я постоянный клиент и горжусь этим.",
+      name:"Виктор"
+    },
+    {
+      text:"Независимо от того, насколько плоха <br> ваша ситуация, ваш автомобиль будет<br> выглядеть еще лучше!",
+      name:"Марина"
+    },
+    {
+      text:"Лучшая профессиональная <br> помощь по смехотворно <br> низкой цене!",
+      name:"Виталий"
+    }
+  ]
+
+- 
+  var deadlines = [
+    {
+      date:"Сентябрь 2017",
+      desc:"Расскажите о наиболее важных этапах создания проекта. Это добавит доверия."
+    },
+    {
+      date:"Сентябрь 2017",
+      desc:"Расскажите о наиболее важных этапах создания проекта. Это добавит доверия."
+    },
+    {
+      date:"Сентябрь 2017",
+      desc:"Расскажите о наиболее важных этапах создания проекта. Это добавит доверия."
+    }
+  ]
 
 
 
@@ -113,7 +275,9 @@ html(lang="ru")
                   p.advantages-container__item-desc #{advantage.desc}
         .fullscreen-section.discount-section  
           h1.discount-section-headline Получите скидку 5% на любой сервис сегодня!
-          span.wellcome-container__row__desk-text Новичок? Добро пожаловать в наш автосервис! Мы очень сожалеем, что вы должны починить свой автомобиль, поэтому мы хотим поощрить вас с вашей эксклюзивной скидкой.
+          span.wellcome-container__row__desk-text Новичок? Добро пожаловать в наш автосервис! Мы очень сожалеем, что вы должны починить свой автомобиль, поэтому 
+            br
+            span мы хотим поощрить вас с вашей эксклюзивной скидкой.
           button(type="button").wellcome-container__row__desk-btn.btn Заказать
         .container.services-container
           h2.services-container-headline НАШИ УСЛУГИ
@@ -125,6 +289,114 @@ html(lang="ru")
                     +image(`${service.path}`,'services-image')
                     .services-container__item__wrapper-text
                       span #{service.head}
+        .container.about-container
+          .about-container__block
+            .about-container__block-pic
+            .about-container__block__desc
+              h3.about-container__block__desc-headline Кто мы
+              p.about-container__block__desc-text Мы являемся лидером на рынке автосервисов
+                br
+              span.about-container__block__desc-text-paragraph Уже более 30 лет наша компания производит поврежденные автомобили по всему миру. Также мы восстанавливаем старые шедевры из прошлого, созданные известными марками автомобилей.
+                br
+              span.about-container__block__desc-text-paragraph Если у вас есть свои идеи, они должны стать реальностью! Сообщите нам свой дизайн автомобиля, и мы создадим первоклассный автомобиль как можно скорее!
+        .container.solutions-container
+          h3.solutions-container-headline Решение в 3 простых шага
+          ul.solutions-container__list
+            for step in steps
+              li.solutions-container__item
+                .solutions-container__item-number #{step.id}
+                .solutions-container__item__desc
+                  .solutions-container__item__desc-step Шаг
+                  p.solutions-container__item__desc-text !{step.text}
+        .container.statistic-container
+          .container.statistic-container-wrapper
+            h3.statistic-container-headline.headline люди любят цифры
+            ul.statistic-container__list 
+              for number in numbers
+                li.statistic-container__item 
+                  .statistic-container__item-number #{number.id}
+                  h4.statistic-container__item-headline #{number.head}
+        .container.disign-container
+          .disign-container__block
+            .disign-container__block__desk
+              h3.disign-container__block__desk-headline.headline pro дизайн
+              p.disign-container__block__desk-paragraph Наша компания является пионером этого бизнеса, потому что мы предоставляем множество новых технологий, касающихся дизайнерских предоставляем множество новых касающихся предоставляем множество новых касающихся дизайнерских.
+              button(type="button").btn заказать
+            .disign-container__block-pic
+        .fullscreen-section.timer-section
+          .container.timer-container
+            h3.timer-container-headline.headline до конца акции осталось
+            ul.timer-container__list
+              for count in counts 
+                li.timer-container__item
+                  .timer-container__item-number #{count.number}
+                  .timer-container__item-counter #{count.counter}
+        .container.offers-container
+          .offers-container-headline.headline Пакеты обслуживания
+          ul.offers-container__list
+            for offer in offers
+              li.offers-container__item
+                h4.offers-container__item-headline #{offer.head}
+                .offers-container__item-content !{offer.content}
+                .offers-container__item-price #{offer.price}
+                .btn заказать
+        .container.about-container
+          .about-container__block.persons
+            .about-container__block__desc.persons-desc
+              h3.about-container__block__desc-headline Виктор Полётов
+              p.about-container__block__desc-text Мы являемся лидером на рынке автосервисов
+                br
+              span.about-container__block__desc-text-paragraph Хотя Алан аспирант, он любит автомобили, и он определенно обладает всеми навыками, необходимыми, чтобы сделать вашу машину более плавной на дорогах. Он поможет вам в большинстве случаев, и вы останетесь довольны работой, которую он проделал!
+                br
+              span.about-container__block__desc-text-paragraph Аланис один из наших лучших квалифицированных рабочих. Он также отвечает за обучение наших новых сотрудников и консультирует наших постоянных клиентов по телефону, если у них есть какие-либо вопросы.
+            .about-container__block-pic
+        .container.crew-container
+          h3.crew-container-headline.headline наша комманда
+          ul.crew-container__list
+            for member in members
+              li.crew-container__item
+                .crew-container__item-pic
+                  +image(`content/${member.pic}.png`,'crew-container__item-pic-src')
+                .crew-container__item__desc
+                  .crew-container__item__desc-name #{member.name}
+                  .crew-container__item__desc-pos #{member.pos}
+                  .crew-container__item__desc-text !{member.desc}
+        .container.partners-container
+          +image('content/partners.png','partners-container-pic')
+        .container.questions-container
+          h3.questions-container-headline.headline ПРОСТО ОТВЕТЬТЕ НА ВОПРОСЫ
+          ul.questions-container__list
+            for question in questions
+              li.questions-container__item
+                .questions-container__item-head Вопрос !{question.id}
+                .questions-container__item-text !{question.text}
+        .container.careers-container
+          h3.careers-container-headline.headline ВАША КАРЬЕРА НАЧИНАЕТСЯ ЗДЕСЬ
+          .container.careers-container__block
+            .careers-container__block-pic
+            .careers-container__block__desc
+              ul.careers-container__block__list
+                for career in careers
+                  li.careers-container__block__item
+                    h4.careers-container__block__item-head #{career.head}
+                    p.careers-container__block__item-desc !{career.desc}
+        .container.reviews-container
+          h3.reviews-container-headline.headline отзывы
+          ul.reviews-container__list
+            for review in reviews 
+              li.reviews-container__item
+                .reviews-container__item-text !{review.text}
+                .reviews-container__item-name #{review.name}
+        .container.deadlines-wrapper
+          .container.deadlines-container
+            h3.deadlines-container-headline.headline ПОКАЗАТЬ СРОКИ ВАШЕГО ПРОЕКТА
+            ul.deadlines-container__list
+              for deadline in deadlines
+                li.deadlines-container__item
+                  .deadlines-container__item-date #{deadline.date}
+                  .deadlines-container__item-desc #{deadline.desc}
+        .fullscreen-section.map-container
+            
 
-
+                  
 
