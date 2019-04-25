@@ -4,6 +4,9 @@
     &__block {
         display: flex;
         flex-direction: row;
+        @include phones {
+            flex-direction: column;
+        }
         &-pic {
             flex: 1;
             background-image: url('../images/content/workers.png');
@@ -11,6 +14,9 @@
             background-repeat: no-repeat;
             background-size: cover;
             min-height: 470px;
+            @include phones {
+                min-height: 350px;
+            }
         }
         &__desc {
             background-color: #F4F5F7;
@@ -19,6 +25,9 @@
             flex-direction: column;
             justify-content: center;
             padding: 0 20px 0 80px;
+            @include phones {
+                padding-left: .6rem;
+            }
             &-headline {
                 position: relative;
                 font-family: Montserrat;
@@ -30,6 +39,9 @@
                 text-transform: uppercase;
                 color: #686868;
                 padding-bottom: 62px;
+                @include phones {
+                    padding-top: 50px ;
+                }
                 &::before {
                     position: absolute;
                     display: block;
@@ -55,6 +67,9 @@
                     color: #8F8F8F;
                     padding-bottom: 27px;
                     padding-right: 35%;
+                    @include phones {
+                        padding-right: 0;
+                    }
                 }
             }
         }
@@ -68,6 +83,9 @@
         &.about-container__block__desc {
             flex: .8;
             padding-left: 10rem;
+            @include phones {
+                padding-left: 1rem;
+            }
         }
     }
 }

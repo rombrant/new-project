@@ -1,7 +1,24 @@
 include ./mixins.pug
 
 - 
-  var navs = ["Галерея", "Прайс", "Контакты", "Все блоки"] 
+  var navs = [
+    {
+      title:"Галерея",
+      href:"services"
+    },
+    {
+      title:"Прайс",
+      href:"offers"
+    },
+    {
+      title:"Контакты",
+      href:"contacts"
+    },
+    {
+      title:"Все блоки",
+      href:""
+    }
+  ] 
 - 
   var items = [
     {
@@ -225,7 +242,140 @@ include ./mixins.pug
     }
   ]
 
+- 
+  var contacts = [
+    {
+      head:"АДРЕС:",
+      title:"Новый Арбат, дом 22, Москва, Россия"
+    },
+    {
+      head:"ТЕЛЕФОН:",
+      title:"+7(495) 556 66 77"
+    },
+    {
+      head:"E-MAIL:",
+      title:"info@webinnovation.moscow"
+    }
+  ]
 
+- 
+  var placeholders = [
+    {
+    text:"Ваше имя",
+    type:"text"
+    }, 
+    {
+    text:"Ваш E-mail",
+    type:"email"
+    }, 
+    {
+    text:"Ваше сообщение",
+    type:"text"
+    }
+    ] 
+
+- 
+  var links = ["Смена масла","Выхлоп и глушители","Тормоза и ремонт тормозов","Шины и Колеса ","Кондиционер","Рулевое управление и подвеска","Батареи ","Услуги двигателя "]
+
+- 
+  var hours = [
+    {
+      day:"Воскресение",
+      hour:"10:00-18:30"
+    },
+    {
+      day:"Суббота",
+      hour:"10:00-18:30"
+    },
+    {
+      day:"Пятница",
+      hour:"08:00-10:00"
+    },
+    {
+      day:"Четверг",
+      hour:"08:00-10:00"
+    },
+    {
+      day:"Среда",
+      hour:"08:00-10:00"
+    },
+    {
+      day:"Вторник",
+      hour:"08:00-10:00"
+    },
+    {
+      day:"Понедельник",
+      hour:"08:00-10:00"
+    },
+  ]
+
+- 
+  var hides = [
+    {
+    title:"Выгоды",
+    href:"advantages"
+    },
+    {
+    title:"Объявления",
+    href:"discount"
+    },
+    {
+    title:"Галерея",
+    href:"services"
+    },
+    {
+    title:"О нас",
+    href:"about"
+    },
+    {
+    title:"3 шага",
+    href:"steps"
+    },
+    {
+    title:"Продукт",
+    href:"prodesign"
+    },
+    {
+    title:"Счетчики",
+    href:"timer"
+    },
+    {
+    title:"Ценообразование",
+    href:"offers"
+    },
+    {
+    title:"Резюме",
+    href:"members"
+    },
+    {
+    title:"Команда",
+    href:"crew"
+    },
+    {
+    title:"Спонсоры",
+    href:"partners"
+    },
+    {
+    title:"F.A.Q",
+    href:"questions"
+    },
+    {
+    title:"Вакансия",
+    href:"careers"
+    },
+    {
+    title:"Отзывы",
+    href:"reviews"
+    },
+    {
+    title:"График",
+    href:"deadlines"
+    },
+    {
+    title:"Контакты",
+    href:"contacts"
+    }
+ ]
 
 
 
@@ -238,32 +388,37 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Сервисный центр по ремонту автомобилей
   body
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=<0423c280-04ba-4332-8c06-0e252f4bcf93>&lang=ru_RU" type="text/javascript")
     .wrapper
       .maincontent
-        .fullscreen-section.wellcome-section
+        .fullscreen-section.wellcome-section#main
           .wellcome-container
             .container.wellcome-container__row
               header.header
                 .logo
                   +icon("logo", "logo-main")
+                ul.hide-menu
+                  for hide in hides
+                    li.hide-menu__item
+                      a(href=`#${hide.href}`).hide-menu__item-link #{hide.title}
                 ul.wellcome-container__list
                   for nav in navs 
                     li.wellcome-container__item
-                      a(href="http://").wellcome-container__item-link #{nav}
+                      a(href=`#${nav.href}`).wellcome-container__item-link #{nav.title}
               .wellcome-container__row__desk
                 h1.wellcome-container__row__desk-headline Сервисный центр
                   br
                   span по ремонту автомобилей
                 span.wellcome-container__row__desk-text Наш сервис занимается высококачественным детейлингом - оказывает весь спектр услуг в этом направлении. Закажите у нас консультацию?
                 button(type="button").wellcome-container__row__desk-btn.btn Заказать
-          .container
+          .container.contacts-container
             ul.contacts-list
               for item in items
                 li.contacts-list__item
                   .contacts-list__item-pic
                     +icon(`${item.path}`,"contacts-svg-pic")
                   .contacts-list__item-desc !{item.desc}
-        .container.advantages-container
+        .container.advantages-container#advantages
           h2.advantages-container-headline ПРЕИМУЩЕСТВА ОБСЛУЖИВАНИЯ
           .container
             ul.advantages-container__list
@@ -273,13 +428,13 @@ html(lang="ru")
                     +icon(`${advantage.path}`,"advantages-svg-pic")
                   .advantages-container__item-headline #{advantage.head}
                   p.advantages-container__item-desc #{advantage.desc}
-        .fullscreen-section.discount-section  
+        .fullscreen-section.discount-section#discount  
           h1.discount-section-headline Получите скидку 5% на любой сервис сегодня!
           span.wellcome-container__row__desk-text Новичок? Добро пожаловать в наш автосервис! Мы очень сожалеем, что вы должны починить свой автомобиль, поэтому 
             br
             span мы хотим поощрить вас с вашей эксклюзивной скидкой.
           button(type="button").wellcome-container__row__desk-btn.btn Заказать
-        .container.services-container
+        .container.services-container#services
           h2.services-container-headline НАШИ УСЛУГИ
           .container
             ul.services-container__list
@@ -289,7 +444,7 @@ html(lang="ru")
                     +image(`${service.path}`,'services-image')
                     .services-container__item__wrapper-text
                       span #{service.head}
-        .container.about-container
+        .container.about-container#about
           .about-container__block
             .about-container__block-pic
             .about-container__block__desc
@@ -299,7 +454,7 @@ html(lang="ru")
               span.about-container__block__desc-text-paragraph Уже более 30 лет наша компания производит поврежденные автомобили по всему миру. Также мы восстанавливаем старые шедевры из прошлого, созданные известными марками автомобилей.
                 br
               span.about-container__block__desc-text-paragraph Если у вас есть свои идеи, они должны стать реальностью! Сообщите нам свой дизайн автомобиля, и мы создадим первоклассный автомобиль как можно скорее!
-        .container.solutions-container
+        .container.solutions-container#steps
           h3.solutions-container-headline Решение в 3 простых шага
           ul.solutions-container__list
             for step in steps
@@ -316,14 +471,14 @@ html(lang="ru")
                 li.statistic-container__item 
                   .statistic-container__item-number #{number.id}
                   h4.statistic-container__item-headline #{number.head}
-        .container.disign-container
+        .container.disign-container#prodesign
           .disign-container__block
             .disign-container__block__desk
               h3.disign-container__block__desk-headline.headline pro дизайн
               p.disign-container__block__desk-paragraph Наша компания является пионером этого бизнеса, потому что мы предоставляем множество новых технологий, касающихся дизайнерских предоставляем множество новых касающихся предоставляем множество новых касающихся дизайнерских.
               button(type="button").btn заказать
             .disign-container__block-pic
-        .fullscreen-section.timer-section
+        .fullscreen-section.timer-section#timer
           .container.timer-container
             h3.timer-container-headline.headline до конца акции осталось
             ul.timer-container__list
@@ -331,7 +486,7 @@ html(lang="ru")
                 li.timer-container__item
                   .timer-container__item-number #{count.number}
                   .timer-container__item-counter #{count.counter}
-        .container.offers-container
+        .container.offers-container#offers
           .offers-container-headline.headline Пакеты обслуживания
           ul.offers-container__list
             for offer in offers
@@ -340,7 +495,7 @@ html(lang="ru")
                 .offers-container__item-content !{offer.content}
                 .offers-container__item-price #{offer.price}
                 .btn заказать
-        .container.about-container
+        .container.about-container#members
           .about-container__block.persons
             .about-container__block__desc.persons-desc
               h3.about-container__block__desc-headline Виктор Полётов
@@ -350,7 +505,7 @@ html(lang="ru")
                 br
               span.about-container__block__desc-text-paragraph Аланис один из наших лучших квалифицированных рабочих. Он также отвечает за обучение наших новых сотрудников и консультирует наших постоянных клиентов по телефону, если у них есть какие-либо вопросы.
             .about-container__block-pic
-        .container.crew-container
+        .container.crew-container#crew
           h3.crew-container-headline.headline наша комманда
           ul.crew-container__list
             for member in members
@@ -361,16 +516,16 @@ html(lang="ru")
                   .crew-container__item__desc-name #{member.name}
                   .crew-container__item__desc-pos #{member.pos}
                   .crew-container__item__desc-text !{member.desc}
-        .container.partners-container
+        .container.partners-container#partners
           +image('content/partners.png','partners-container-pic')
-        .container.questions-container
+        .container.questions-container#questions
           h3.questions-container-headline.headline ПРОСТО ОТВЕТЬТЕ НА ВОПРОСЫ
           ul.questions-container__list
             for question in questions
               li.questions-container__item
                 .questions-container__item-head Вопрос !{question.id}
                 .questions-container__item-text !{question.text}
-        .container.careers-container
+        .container.careers-container#careers
           h3.careers-container-headline.headline ВАША КАРЬЕРА НАЧИНАЕТСЯ ЗДЕСЬ
           .container.careers-container__block
             .careers-container__block-pic
@@ -380,14 +535,14 @@ html(lang="ru")
                   li.careers-container__block__item
                     h4.careers-container__block__item-head #{career.head}
                     p.careers-container__block__item-desc !{career.desc}
-        .container.reviews-container
+        .container.reviews-container#reviews
           h3.reviews-container-headline.headline отзывы
           ul.reviews-container__list
             for review in reviews 
               li.reviews-container__item
                 .reviews-container__item-text !{review.text}
                 .reviews-container__item-name #{review.name}
-        .container.deadlines-wrapper
+        .container.deadlines-wrapper#deadlines
           .container.deadlines-container
             h3.deadlines-container-headline.headline ПОКАЗАТЬ СРОКИ ВАШЕГО ПРОЕКТА
             ul.deadlines-container__list
@@ -395,7 +550,48 @@ html(lang="ru")
                 li.deadlines-container__item
                   .deadlines-container__item-date #{deadline.date}
                   .deadlines-container__item-desc #{deadline.desc}
-        .fullscreen-section.map-container
+        #contacts
+        .fullscreen-section.map-container#map
+        .container.form-container
+          .form-container__block
+            h3.form-container__block-headline.headline Связаться с нами
+            ul.form-container__block__list
+              for contact in contacts
+                li.form-container__block__info
+                  span.form-container__block__info-headline #{contact.head}
+                  span.form-container__block__info-title #{contact.title}
+          form.form-container__feedback
+            ul.form-container__feedback__list
+              for placeholder in placeholders
+                li.form-container__feedback__item
+                  label.form-container__feedback__item-label
+                    input.form-container__feedback__item-input(type=`${placeholder.type}` placeholder=`${placeholder.text}` required)
+              button(type="submit").btn Отправить
+        footer.footer
+          .container.footer-container
+            .footer-container__about
+              p.footer-container__about-paragraph К настоящему времени мы отремонтировали тысячи новых и ретро автомобилей. За последнее десятилетие мы собрали сотни постоянных постоянных клиентов благодаря качеству выполняемых нами работ и ремонта.
+              h3.footer-headline О нас
+            ul.footer-container__services-list
+              for link in links
+                li.footer-container__services-item #{link}
+              h3.footer-headline Авторемонт
+            ul.footer-container__contact-list
+              for contact in contacts 
+                li.footer-container__contact-item #{contact.title}
+              h3.footer-headline Наши Контакты
+            ul.footer-container__workinghours-list
+              for hour in hours 
+                li.footer-container__workinghours-item 
+                  span #{hour.day}
+                  span #{hour.hour}
+              h3.footer-headline Часы работы
+          .copyright-block
+            .copyright-block-headline Copyright © 2019. Все права защищены. Разработано 
+              span WEBINNOVATION.MOSCOW
+        a(href="#main").nav-arrow
+  
+    
             
 
                   

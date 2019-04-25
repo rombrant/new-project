@@ -9,8 +9,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__item {
+        transition: .5s;
         cursor: pointer;
         margin-right: 2rem;
         flex: 1;
@@ -21,12 +26,21 @@
         position: relative;
         border: 3px solid #F4F5F7;
         padding-bottom: 55px;
+        @include phones {
+            margin-bottom: 1rem;
+            margin-right: 0;
+            width: 100%;
+        }
         &:last-child {
             margin-right: 0;
         }
         &:hover {
+            transition: .5s;
             border: 3px solid #FF5253;
             transform: scale(1.1);
+            @include phones {
+                transform: scale(1.01);
+            }
         }
         &-headline {
             width: 100%;

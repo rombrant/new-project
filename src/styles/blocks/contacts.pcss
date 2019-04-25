@@ -1,12 +1,24 @@
+.contacts-container {
+    width: 100vw;
+    background-color: #FAFAFB;
+}
 .contacts-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem 0;
+    @include phones {
+        margin: 0 auto;
+        flex-direction: column;
+        width: 90%;
+    }
     &__item {
         display: flex;
         flex-direction: row;
         align-items: center;
+        @include phones {
+            padding-bottom: 1.5rem;
+        }
         &-pic {
             width: 60px;
             height: 60px;

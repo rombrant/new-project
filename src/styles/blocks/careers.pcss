@@ -3,14 +3,23 @@
     width: 100%;
     background-color: #F4F5F7;
     padding: 140px 0 120px 0;
+    @include phones {
+        padding: 50px 0 40px 0;
+    }
     &-headline {
         &::before {
             left: 47%;
+            @include phones {
+                left: 42%;
+            }
         }
     }
     &__block {
         display: flex;
         flex-direction: row;
+        @include phones {
+            flex-direction: column;
+        }
         &-pic {
             flex-basis: 50%;
             display: flex;
@@ -20,6 +29,10 @@
             background-position: top;
             background-repeat: no-repeat;
             min-height: 470px;
+            @include phones {
+                min-height: 350px;
+                background-size: contain;
+            }
         }
         &__desc {
             padding-left: 31px;

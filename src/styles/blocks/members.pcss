@@ -1,8 +1,14 @@
 .crew-container {
     padding: 140px 0 120px 0;
+    @include phones {
+        padding: 50px 0 40px 0;
+    }
     &-headline {
         &:before {
             left: 47%;
+            @include phones {
+                left: 42%;
+            }
         }
     }
     &__list {
@@ -10,6 +16,9 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        @include phones {
+            flex-direction: column;
+        }
 
     }
     &__item {

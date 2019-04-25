@@ -1,5 +1,8 @@
 .solutions-container {
     padding: 140px 0 120px 0;
+    @include phones {
+        padding: 50px 0 40px 0;
+    }
     &-headline {
         text-align: center;
         position: relative;
@@ -20,15 +23,24 @@
             content: '';
             width: 4rem;
             border: 1.5px solid #FF5253;
+            @include phones {
+                left: 42%;
+            }
         }
     }
     &__list {
         display: flex;
         flex-direction: row;
+        @include phones {
+            flex-direction: column;
+        }
     }
     &__item {
         display: flex;
         flex-direction: row;
+        @include phones {
+            padding-bottom: 1rem;
+        }
         &-number {
             font-family: Montserrat;
             font-style: normal;
@@ -60,6 +72,9 @@
                 line-height: 1.5rem;;
                 color: #8F8F8F;
                 padding-right: 30%;
+                @include phones {
+                    padding-right: 0;
+                }
             }
         }
     }

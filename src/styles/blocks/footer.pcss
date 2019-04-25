@@ -1,0 +1,144 @@
+.footer {
+    max-width: 100vw;
+    width: 100%;
+    background-color: #2A2A2A;
+    &-headline {
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        padding-bottom: 27px;
+    }
+    &-container {
+        padding: 87px 0 87px 0;
+        display: flex;
+        flex-direction: row;
+        &__about, &__services-list, &__contact-list, &__workinghours-list  {
+            flex: 1;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            color: #fff;
+            padding-right: 2rem;
+        }
+        &__about {
+            &-paragraph {
+                line-height: 25px;
+                color: #8F8F8F;
+            }
+        }
+        &__services {
+            &-item {
+                line-height: 19px;
+                color: #FF5253;
+                padding-bottom: 12px;
+                font-weight: 100;
+                padding-left: 8px;
+                position: relative;
+                &::before {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: -4px;
+                    width: .6rem;
+                    height: .6rem;
+                    background: svg-load('arrow-footer.svg', fill=#C4C4C4, width=100%, height=100%);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: contain;
+                }
+            }
+        }
+        &__contact {
+            &-list {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            &-item {
+                position: relative;
+                padding-left: 2.5rem;
+                padding-bottom: 36px;
+                &::before {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    width:  1rem;
+                    height: 1rem;
+                }
+                &:nth-child(3)::before {
+                    background: svg-load('message.svg', fill=#C4C4C4, width=100%, height=100%) center center no-repeat;
+                    background-size: contain;
+                }
+                &:nth-child(2)::before {
+                    background: svg-load('phone-footer.svg', fill=#C4C4C4, width=100%, height=100%) center center no-repeat;
+                    background-size: contain;
+                }
+                &:nth-child(1)::before {
+                    background: svg-load('map-footer.svg', fill=#C4C4C4, width=100%, height=100%) center center no-repeat;
+                    background-size: contain;
+                }
+                    
+            }
+        }
+
+        &__workinghours {
+            &-list {
+                padding-right: 0;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            &-item {
+                width: 80%;
+                color: #8F8F8F;
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 20px;
+            }
+        }
+            
+    }
+}
+.copyright-block {
+    background-color: #0F0F0F;
+    padding: 1rem;
+    &-headline {
+        max-width: 1200px;
+        margin: 0 auto;
+        color: #C4C4C4;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: -0.01em;
+        & span {
+            color: #FF5253;
+        }
+    }
+}
+.nav-arrow {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: #FF5253;
+    background-image: svg-load('arrow-footer.svg', fill=#fff, transform=rotate(-90deg));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-blend-mode: overlay;
+    transition: .3s;
+    @include phones {
+        right: 35px;
+    }
+    &:hover {
+        transition: .3s;
+        opacity: 1;
+        background-color: rgb(102, 102, 102);
+      }
+
+}

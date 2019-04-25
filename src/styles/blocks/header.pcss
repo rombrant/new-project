@@ -1,9 +1,13 @@
 .header {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 140px;
     max-height: 60px;
+    @include phones {
+        margin-top: 0;
+    }
 }
 .logo {
     width: 11rem;
@@ -15,11 +19,29 @@
         justify-content: flex-end;
         flex: 1;
         padding-right: 3rem;
+        @include phones {
+            display: none;
+        }
     }
     &__item {
         position: relative;
         padding-left: 2rem;
+        max-height: 1.42rem;
+        transition: .3s;
+        &:hover {
+            & .wellcome-container__item-link {
+                transition: .3s;
+                color: #FF5253;
+            }
+            &.wellcome-container__item:last-child::after {
+                transition: 3s;
+                background: svg-load('arrow.svg', fill=#FF5253, width=100%, height=100%);
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
         &:last-child::after {
+            transition: .3s;
             display: block;
             content: '';
             position: absolute;
@@ -32,7 +54,9 @@
             background-repeat: no-repeat;
             background-position: center center;
         }
+        
         &-link {
+            transition: .3s;
             color: #fff;
             text-decoration-line: none;
         }
@@ -40,4 +64,24 @@
 }
 .logo-main {
     fill: #fff;
+}
+
+.hide-menu {
+    transition: .6s;
+    background-color: #fff;
+    position: absolute;
+    right: -2.5rem;
+    top: 1.5rem;
+    height: 0;
+    overflow: hidden;
+    &__item {
+        padding: .3rem 1rem;
+        &:hover {
+            cursor: pointer;
+            color: #FF5253;
+        }
+        &-link {
+            text-decoration: none;
+        }
+    }
 }

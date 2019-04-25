@@ -9,11 +9,20 @@
     }
     &-container {
         padding: 140px 0 120px;
+        @include phones {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 100px 0 40px 0;
+        }
         &-headline {
             color: #fff;
             position: relative;
             &::before {
                 left: 47%;
+                @include phones {
+                    left: 42%;
+                }
             }
         }
         &__list {
@@ -32,6 +41,10 @@
             width: 100%;
             padding: 27.5px 0;
             border-radius: 50%;
+            @include phones {
+                padding: 23px 0;
+                margin-right: 1rem;
+            }
             &:last-child {
                 margin-right: 0;
                 &::after {
@@ -56,6 +69,9 @@
                 line-height: normal;
                 text-align: center;
                 text-transform: uppercase;
+                @include phones {
+                    right: -.5rem;
+                }
             }
         }
     }

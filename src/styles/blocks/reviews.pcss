@@ -1,14 +1,23 @@
 .reviews-container {
     padding: 140px 0 120px 0;
+    @include phones {
+        padding: 50px 0 40px 0;
+    }
     &-headline {
         &::before {
             left: 47%;
+            @include phones {
+                left: 42%;
+            }
         }
     }
     &__list {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @include phones {
+            flex-direction: column;
+        }
     }
     &__item {
         display: flex;
@@ -17,6 +26,9 @@
         position: relative;
         padding-left: 2rem;
         border-left: 5px solid #FF5253;
+        @include phones {
+            margin-bottom: 1rem;
+        }
         &-name {
             font-family: Montserrat;
             font-size: 15px;

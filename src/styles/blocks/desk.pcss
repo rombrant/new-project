@@ -27,7 +27,14 @@
                 font-size: 48px;
                 font-weight: bold;
                 text-transform: uppercase;
+                @include phones {
+                    font-size: 1.5rem;
+                }
                 
+            }
+            @include phones {
+                padding: 0;
+                padding-top: 20%;
             }
             &-text {
                 text-align: center;
@@ -39,6 +46,9 @@
                     content: '';
                     width: 4rem;
                     border: 1.5px solid #FF5253;
+                    @include phones {
+                        left: 42%;
+                    }
                 }
                 position: relative;
                 padding-top: 5rem;
