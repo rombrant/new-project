@@ -17,6 +17,9 @@
             padding-bottom: 1.5rem;
             &::before {
                 bottom: 0;
+                @include phones {
+                    left: 42%;
+                }
             }
             @include phones {
                 text-align: center;

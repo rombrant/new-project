@@ -5,7 +5,7 @@
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone https://github.com/rombrant/test-task
+$ git clone https://github.com/rombrant/new-project
 $ cd test-task
 $ yarn
 ```
