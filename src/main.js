@@ -6,3 +6,4 @@ if (process.env.NODE_ENV === "development") {
 
 import "./scripts/maps.js";
 import "./scripts/hide-menu.js";
+import "./scripts/popup.js";
